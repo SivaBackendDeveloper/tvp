@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'j/activity.html'%}
+{%block body_block%}
+<center>
+<h1>Activity Update Form</h1><hr>
+<form method="post">
+{%csrf_token%}
+Activity Date: <input type="date" name="date" value="{{a.date}}"><p></p>
+Activity : <input type="text" name="activity" value="{{a.activity}}"><p></p>
+<input type="submit" class='btn btn-warning btn-lg' value="Update Record">
+</form>
+</center>
+{%endblock%}
