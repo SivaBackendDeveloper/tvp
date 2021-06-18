@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-59cy-cs^@zb-j+)m^cv^%&d6_kmxt%ri1g*pnm-fr-98u)sr*-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =False
 
-ALLOWED_HOSTS =['*']
+ALLOWED_HOSTS =["*"]
 
 
 # Application definition
@@ -133,6 +133,8 @@ STATICFILES_DIRS=[
  ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
 
+PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
+
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"media/")
 
@@ -144,7 +146,4 @@ LOGIN_URL = 'login'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
-
-django_heroku.settings(locals())
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
