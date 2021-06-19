@@ -6,8 +6,8 @@
 <form method="post">
 {%csrf_token%}
 Member Name: <input type="text" name="name" value="{{member.name}}"><p></p>
-Member Role: <input type="text" name="esal" value="{{member.role}}"><p></p>
-Member mobilenumber: <input type="text" name="eaddr" value="{{member.mobilenumber}}"><p></p>
+Member Role: <input type="text" name="role" value="{{member.role}}"><p></p>
+Member mobilenumber: <input type="text" name="mobilenumber" value="{{member.mobilenumber}}"><p></p>
 <input type="submit" class='btn btn-warning btn-lg' value="Update Record">
 </form>
     </center>
