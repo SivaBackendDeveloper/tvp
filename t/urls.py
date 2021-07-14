@@ -36,6 +36,7 @@ urlpatterns = [
   url(r'^upactivity/(?P<id>\d+)/$', views.activityupdate_view),
   path('accounts/',include('django.contrib.auth.urls' )),
   url(r'^login/', views.login_view),
+  url(r'^logout/', views.logout_view),  
 
   ]
 if settings.DEBUG:
