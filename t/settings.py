@@ -9,11 +9,13 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import dj_database_url
-import django_heroku
+
+
 from pathlib import Path
 
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-59cy-cs^@zb-j+)m^cv^%&d6_kmxt%ri1g*pnm-fr-98u)sr*-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =True
 
 ALLOWED_HOSTS =["*"]
 
@@ -136,10 +138,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'media/images')
 PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
 
 MEDIA_URL="/media/"
-MEDIA_ROOT=os.path.join(BASE_DIR,"media/")
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
