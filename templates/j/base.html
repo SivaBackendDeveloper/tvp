@@ -32,8 +32,15 @@ h1 {
     href="/index" role="button">MEMBERS</a>
     <a class="btn btn-primary btn-lg"
     href="/activity" role="button">ACTIVITIES</a>
-    <a class="btn btn-primary btn-lg"
-    href="/login" role="button">LOGIN</a>
+
+    {% if user.is_authenticated %}
+     <a class="btn btn-primary btn-lg"
+     href="/logout" role="button">LOGOUT</a>
+     {% else %}
+      <a class="btn btn-primary btn-lg"
+       href="/login" role="button">LOGIN</a>
+     {% endif %}
+
 <center>
 <img src="{% static "images/j.jpg" %}" alt="">
 
