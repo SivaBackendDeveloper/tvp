@@ -1,4 +1,4 @@
-from django.contrib import messages
+from django.contrib import messages, auth
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
@@ -40,12 +40,11 @@ def activityinsert_view(request):
         if form.is_valid():
           form.save()
           obj = form.instance
-          return render(request, "j/addactivity.html", {"obj": obj})
+          return render(request, "j/addactivity.html", {"form": form ,"obj": obj})
     else:
        form = ActivityForm()
 
-    img = Activity.objects.all()
-    return render(request, "j/addactivity.html", {"img": img, "form": form})
+    return render(request, "j/addactivity.html", {"form": form })
 
 @login_required()
 def delete_view(request, id):
@@ -100,5 +99,11 @@ def login_view(request):
     return render(request = request,
                     template_name = "registration/login.html",
                     context={"form":form})
+
+
+def logout_view(request):
+    auth.logout(request)
+    return redirect('/')
+
 
 
